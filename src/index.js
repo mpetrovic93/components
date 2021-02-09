@@ -1,42 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import faker from 'faker';
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
+
 const App = () =>{
     return (
         <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.image()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00PM</span>
-                    </div>
-                    <div className="text">
-                        Nice blog post!
-                    </div>
-                </div>
-            </div>
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.image()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00PM</span>
-                    </div>
-                    <div className="text">
-                        Nice blog post!
-                    </div>
-                </div>
-            </div>
-            
+            <ApprovalCard>
+                <CommentDetail 
+                    author="Sam" 
+                    timeAgo="Danas u 14:00"  
+                    commentText="Ovo je moj komentar jedan" 
+                    commentImage={faker.image.image()}
+                />
+            </ApprovalCard>
+
+            <ApprovalCard>
+                <CommentDetail 
+                    author="Alex" 
+                    timeAgo="Danas u 12:00" 
+                    commentText="Ovo je moj komentar dva" 
+                    commentImage={faker.image.image()}
+                />
+            </ApprovalCard>
+
+            <ApprovalCard>
+                <CommentDetail 
+                    author="Jane" 
+                    timeAgo="Juce u 17:00"  
+                    commentText="Ovo je moj komentar tri" 
+                    commentImage={faker.image.image()}
+                />
+            </ApprovalCard>
         </div>
     );
 };
